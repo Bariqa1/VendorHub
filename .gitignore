@@ -1,0 +1,86 @@
+# ==============================================================================
+# VendorHub - Git Ignore Configuration (.gitignore)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Environment & Sensitive Data (Keep .env.example tracked)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.local
+
+# ------------------------------------------------------------------------------
+# 2. Operating System & Editor Files
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json
+.settings/
+.project
+.classpath
+*.sublime-workspace
+*.sublime-project
+
+# ------------------------------------------------------------------------------
+# 3. Java & Maven (Backend)
+# ------------------------------------------------------------------------------
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+replay_pid*
+.mvn/wrapper/maven-wrapper.jar
+
+# ------------------------------------------------------------------------------
+# 4. Python & Virtual Environments (AI Microservice)
+# ------------------------------------------------------------------------------
+venv/
+**/venv/
+.venv/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ------------------------------------------------------------------------------
+# 5. Node & Angular (Frontend)
+# ------------------------------------------------------------------------------
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.angular/
+.npm/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ------------------------------------------------------------------------------
+# 6. Logs & Database Temporary Files
+# ------------------------------------------------------------------------------
+logs/
+*.log
+*.h2.db
+vendorhubdb.*
