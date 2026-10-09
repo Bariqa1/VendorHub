@@ -12,3 +12,8 @@ spring:
     properties:
       hibernate:
         format_sql: false
+
+app:
+  jwt:
+    secret: test-only-jwt-secret-that-is-at-least-32-characters-long
+    expiration-ms: 86400000

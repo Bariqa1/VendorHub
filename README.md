@@ -107,8 +107,14 @@ mvn clean test
 
 ### Running with Docker Compose
 ```bash
+cp .env.example .env
+# Replace the placeholder values in .env with local secrets.
 docker compose up --build -d
 ```
+
+The `.env` file is ignored by Git and must never be committed. Docker Compose
+requires `DB_PASSWORD` and `JWT_SECRET` to be supplied through this file; the
+repository does not contain runtime credentials.
 
 ### Access Points
 * Frontend Client: http://localhost:4200

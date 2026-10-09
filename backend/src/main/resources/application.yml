@@ -20,6 +20,11 @@ spring:
       enabled: true
       path: /h2-console
 
+app:
+  jwt:
+    secret: ${APP_JWT_SECRET}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
 logging:
   level:
     com.vendorhub: DEBUG

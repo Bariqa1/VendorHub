@@ -8,7 +8,7 @@ services:
     environment:
       POSTGRES_DB: ${DB_NAME:-vendorhub_db}
       POSTGRES_USER: ${DB_USERNAME:-vendorhub_user}
-      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
     ports:
       - "5432:5432"
     volumes:
@@ -33,8 +33,8 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/${DB_NAME:-vendorhub_db}
       SPRING_DATASOURCE_USERNAME: ${DB_USERNAME:-vendorhub_user}
-      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}
-      APP_JWT_SECRET: ${JWT_SECRET}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:?DB_PASSWORD must be set}
+      APP_JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be set}
       APP_AI_SERVICE_URL: http://ai-service:8000
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:8080/v3/api-docs || exit 1"]
