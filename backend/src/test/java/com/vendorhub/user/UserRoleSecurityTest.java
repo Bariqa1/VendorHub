@@ -45,7 +45,7 @@ class UserRoleSecurityTest {
 
         User user = User.builder()
                 .username("ahmed.procurement")
-                .email("ahmed@emdad.sa")
+                .email("ahmed@vendorhub.sa")
                 .passwordHash("$2a$12$e8Y5t1hK3D...") // BCrypt dummy hash
                 .fullName("أحمد بن فهد المنصور")
                 .phoneNumber("+966551234567")
@@ -62,7 +62,7 @@ class UserRoleSecurityTest {
 
         Optional<User> loaded = userRepository.findByUsername("ahmed.procurement");
         assertThat(loaded).isPresent();
-        assertThat(loaded.get().getEmail()).isEqualTo("ahmed@emdad.sa");
+        assertThat(loaded.get().getEmail()).isEqualTo("ahmed@vendorhub.sa");
         assertThat(loaded.get().getRoles()).extracting(Role::getName)
                 .containsExactlyInAnyOrder(RoleType.ROLE_ADMIN, RoleType.ROLE_PROCUREMENT_OFFICER);
     }

@@ -100,7 +100,7 @@ public class DataInitializer implements CommandLineRunner {
                 .build());
 
         Vendor vendor2 = vendorRepository.save(Vendor.builder()
-                .companyNameAr("شركة سلاسل الإمداد والخدمات اللوجستية الوطنية")
+                .companyNameAr("شركة سلاسل التوريد والخدمات اللوجستية الوطنية")
                 .companyNameEn("National Supply Chain & Logistics Co.")
                 .crNumber("1010654321")
                 .crExpiryDate(LocalDate.now().plusMonths(8))

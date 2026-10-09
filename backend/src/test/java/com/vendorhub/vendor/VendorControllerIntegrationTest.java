@@ -53,7 +53,7 @@ class VendorControllerIntegrationTest {
         VendorCreateRequest request = VendorCreateRequest.builder()
                 .companyNameAr("شركة واحة الأعمال")
                 .companyNameEn("Business Oasis Co")
-                .crNumber("1010332211")
+                .crNumber("1010778899")
                 .crExpiryDate(LocalDate.now().plusYears(1))
                 .taxNumber("300332211009003")
                 .nationalAddress("الرياض، طريق التخصصي")
@@ -67,7 +67,7 @@ class VendorControllerIntegrationTest {
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.publicId", notNullValue()))
-                .andExpect(jsonPath("$.crNumber", is("1010332211")))
+                .andExpect(jsonPath("$.crNumber", is("1010778899")))
                 .andExpect(jsonPath("$.status", is("SUBMITTED")));
     }
 

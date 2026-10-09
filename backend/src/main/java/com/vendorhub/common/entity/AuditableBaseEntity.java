@@ -15,7 +15,7 @@ import java.time.Instant;
 
 /**
  * Base auditing entity providing creation and modification tracking
- * compliant with Elm enterprise standards.
+ * compliant with enterprise standards.
  */
 @Getter
 @Setter
